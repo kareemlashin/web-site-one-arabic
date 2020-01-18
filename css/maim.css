@@ -132,6 +132,9 @@ body {
     .nav-link {
         float: right !important;
     }
+    .natTop {
+        background-color: #000;
+    }
 }
 
 .main {
