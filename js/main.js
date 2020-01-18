@@ -10,17 +10,23 @@ $(document).ready(function () {
         let myHref = $(this).attr("href");
         $("html,body").animate({ scrollTop: $(myHref).offset().top }, 1000)
     })
+    $(".up").click(function () {
+        $("body,html").animate({ scrollTop: 0 + "px" }, 2000)
+    })
     let mySer = $("#myServise").offset().top;
     $(window).scroll(
         function () {
             let myWindowScroll = $(window).scrollTop();
             if (myWindowScroll > mySer - navHeight) {
                 $(".navbar").addClass("backGround");
+                $(".navbar").removeClass("natTop");
+
                 $(".nav-link").css("color", "#000");
                 $(".logo").attr("src", "img/logo.png")
                 $(".navbar-toggler-icon i").css("color", "#000")
             } else {
                 $(".navbar").removeClass("backGround");
+                $(".navbar").addClass("natTop");
                 $(".nav-link").css("color", "#fff");
                 $(".logo").attr("src", "img/white_logo.png")
                 $(".navbar-toggler-icon i").css("color", "#fff")
@@ -38,11 +44,11 @@ $(document).ready(function () {
             $('.filter').filter("." + dataChose).show(1000);
         }
     })
-  $(".chose a").click(function () {
-    $(this).addClass("active");
-    $(".chose a").not(this).removeClass('active');
+    $(".chose a").click(function () {
+        $(this).addClass("active");
+        $(".chose a").not(this).removeClass('active');
 
-})
+    })
 
     let myCount = $(".count").offset().top;
     $(window).scroll(function () {
